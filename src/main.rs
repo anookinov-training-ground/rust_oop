@@ -14,7 +14,17 @@ impl Draw for SelectBox {
 
 use oop::{Button, Screen};
 
+// #![allow(unused)]
 fn main() {
+    // clone trait whose methods are not object safe
+    // pub trait Clone {
+    //     fn clone(&self) -> Self;
+    // }
+
+    // pub struct Screen {
+    //     pub components: Vec<Box<dyn Clone>>,
+    // }
+
     let screen = Screen {
         components: vec![
             Box::new(SelectBox {
@@ -36,9 +46,9 @@ fn main() {
 
     screen.run();
 
-    let screen = Screen {
-        components: vec![Box::new(String::from("Hi"))],
-    };
+    // let screen = Screen {
+    //     components: vec![Box::new(String::from("Hi"))],
+    // };
 
-    screen.run();
+    // screen.run();
 }
